@@ -7,6 +7,7 @@
 */
 int main(void)
 {
-fprintf(stdout, "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n");
-return (0);
+char a = "and that piece of art is useful\" - Dora Korpar, 2015-10-19"
+fprintf(stdout, a);
+return (1);
 }

@@ -1,7 +1,7 @@
-#include "1-main.c"
+#include "main.h"
 
 /**
- * print_alphabet - Make the alphabet
+ * main - Entry point
  *
  * Return: Always (Success)
  */

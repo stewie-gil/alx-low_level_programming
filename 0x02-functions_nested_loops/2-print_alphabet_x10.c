@@ -11,7 +11,7 @@ char b;
 for (b = 0; b < 10; b++)
 {
 char c;
-for (c = 'a'; c = < 'z'; c++)
+for (c = 'a'; c <= 'z'; c++)
 {
 _putchar(c);
 }

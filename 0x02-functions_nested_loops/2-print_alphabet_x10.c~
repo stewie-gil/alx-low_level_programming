@@ -1,0 +1,21 @@
+#include "main.h"
+
+/**
+ * rint_alphabet_x10 - Make alphabet x10 times
+ *
+ * Return : void
+ */
+int print_alphabet_x10(void)
+{
+char b;
+for (b = 0; b < 10; b++)
+{
+char c;
+for (c = 'a'; c = < 'z'; c++)
+{
+_putchar(c);
+}
+_putchar('\n');
+}
+return (0);
+}

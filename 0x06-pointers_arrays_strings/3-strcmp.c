@@ -13,6 +13,7 @@ int a = 0, b = 0, c = 0, r = 0, lim;
 while (s1[a])
 {
 a++;
+}
 while (s2[b])
 {
 b++;
@@ -34,7 +35,7 @@ continue;
 }
 else
 {
-r = s1[c] - s2[c]
+r = s1[c] - s2[c];
 break;
 }
 c++;

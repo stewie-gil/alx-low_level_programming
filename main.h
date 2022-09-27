@@ -1,33 +1,19 @@
-#ifndef HOLBERTON_H
-
-#define HOLBERTON_H
-
-
-
 int _putchar(char c);
 
-int _isupper(int c);
+char *_memset(char *s, char b, unsigned int n);
 
-int _isdigit(int c);
+char *_memcpy(char *dest, char *src, unsigned int n);
 
-int mul(int a, int b);
+char *_strchr(char *s, char c);
 
-void print_numbers(void);
+unsigned int _strspn(char *s, char *accept);
 
-void print_most_numbers(void);
+char *_strpbrk(char *s, char *accept);
 
-void more_numbers(void);
+char *_strstr(char *haystack, char *needle);
 
-void print_line(int n);
+void print_chessboard(char (*a)[8]);
 
-void print_diagonal(int n);
+void print_diagsums(int *a, int size);
 
-void print_square(int size);
-
-void print_triangle(int size);
-
-void print_number(int n);
-
-
-
-#endif /* HOLBERTON_H */
+void set_string(char **s, char *to);

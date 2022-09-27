@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+/**
+* main - prints lowercase
+*
+* Return: always 0
+*/
+int main (void)
+{
+char a;
+while (a = 'a', a <= 'z', a++)
+{
+putchar ('%c', a)
+}
+return (0)
+}
+

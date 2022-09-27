@@ -1,0 +1,17 @@
+#include <stdlib.h>
+#include <stdio.h>
+/**
+ * main - dont print  and e
+ * Return: always ziro
+ */
+int main(void)
+{
+char a;
+for (a = 'a'; a <= 'z'; a++)
+{
+while ((a != 'q') && (a != 'a'))
+{
+putchar (a)
+}
+}
+}

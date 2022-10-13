@@ -2,13 +2,13 @@
 /**
  *
  * print_name - print a name
- * @name: name 
- * @f: function to send name to 
+ * @name: name
+ * @f: function to send name to
  * Return: nothing
  */
 void print_name(char *name, void(*f)(char *))
 {
-if(!name || !f)
+if (!name || !f)
 return;
 f(name);
 }

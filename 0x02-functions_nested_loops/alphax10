@@ -1,0 +1,18 @@
+#include "m.h"
+/*
+* alphax1- prints alphabet 10 times
+* Return: zero
+*/
+void alphax10();
+{
+cd=1;
+while (cd <= 10)
+{
+for (c = a; c <= z; c++)
+{
+putz("%s\n",c);
+}
+cd++;
+}
+return (0);
+}

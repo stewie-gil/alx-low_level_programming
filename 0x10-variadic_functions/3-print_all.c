@@ -25,117 +25,55 @@ printf("%i", va_arg(list, int));
  * Return: nothing
  */
 void chk_float(va_list list)
-  
 {
-  
-  printf("%f", va_arg(list, double));
-  
+printf("%f", va_arg(list, double));
 }
-
 /**
-
  * chk_string - prints string
-
  * @list: the type
-
  * Return: nothing
-
  */
-
 void chk_string(va_list list)
-  
 {
-  
-  char *str;
-  
-
-  
-  str = va_arg(list, char *);
-  
-  if (str == NULL)
-    
-    str = "(nil)";
-  
-
-  
-  printf("%s", str);
-  
+char *str;
+str = va_arg(list, char *);
+if (str == NULL)
+str = "(nil)";
+printf("%s", str);
 }
-
 /**
-
  * print_all - prints anything
-
  * @format: types of argumentsn
-
  * Return: nothing
-
  */
-
 void print_all(const char * const format, ...)
-  
 {
-  
-  check_t types[] = {
-		     
-		     {"c", chk_char},
-		     
-		     {"i", chk_int},
-		     
-		     {"f", chk_float},
-		     
-		     {"s", chk_string},
-		     
-		     {NULL, NULL}
-		     
-  };
-  
-
-  
-  int x = 0, y = 0;
-  
-  va_list list;
-  
-  char *sep = "";
-  
-
-  
-  va_start(list, format);
-  
-
-  
-  while (format && format[x])
-    
-    {
-      
-      while (types[y].chk)
-	
-	{
-	  
-	  if (format[x] == *types[y].chk)
-	    
-	    {
-	      
-	      printf("%s", sep);
-	      
-	      types[y].f(list);
-	      
-	      sep = ", ";
-	      
-	    }
-	  
-	  y++;
-	  
-	}
-      
-      y = 0;
-      
-      x++;
-      
-    }
-  
-  printf("\n");
-  
-  va_end(list);
-  
+check_t types[] = {
+{"c", chk_char},
+{"i", chk_int},
+{"f", chk_float},
+{"s", chk_string},
+{NULL, NULL}
+};
+int x = 0, y = 0;
+va_list list;
+char *sep = "";
+va_start(list, format);
+while (format && format[x])
+{
+while (types[y].chk)
+{
+if (format[x] == *types[y].chk)
+{
+printf("%s", sep);
+types[y].f(list);
+sep = ", ";
+}
+y++;
+}
+y = 0;
+x++;
+}
+printf("\n");
+va_end(list);
 }

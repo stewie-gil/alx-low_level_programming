@@ -11,13 +11,13 @@ listint_t *new;
 listint_t *temp;
 new = malloc(sizeof(listint_t));
 if (new == NULL)
-return (NULL);  
+return (NULL);
 new->n = n;
-new->next = NULL; 
-if (*head == NULL)   
+new->next = NULL;
+if (*head == NULL)
 {
 *head = new;
-return (new);      
+return (new);
 }
 else
 {

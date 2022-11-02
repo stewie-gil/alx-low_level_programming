@@ -1,22 +1,15 @@
-#include <stdio.h>
+nclude <stdio.h>
 
-#include "main.h"
+#include "holberton.h"
 
 
 
 /**
-*
-*   * main - Entry point
-*
-*     * @argc: The argument count
-*
-*       * @argv: The argument vector
-*
-*         *
-*
-*           * Return: ...
-*
-*             */
+* main - Entry point
+* @argc: The argument count
+*  @argv: The argument vector
+* Return: ...
+*/
 
 int main(int argc, char **argv)
 

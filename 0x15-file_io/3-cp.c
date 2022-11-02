@@ -1,26 +1,28 @@
-#include <stdio.h>
-
 #include "main.h"
-
-
 
 /**
 *
-*   * main - Entry point
+*  * main - copies the content of one file to another
 *
-*     * @argc: The argument count
+*   * @argc: argument count
 *
-*       * @argv: The argument vector
+*    * @argv: argument vector
 *
-*         *
+*     *
 *
-*           * Return: ...
+*      * Return: 0 if success
 *
-*             */
+*       */
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 
 {
+
+int ffrom, fto, rd, clf, clt;
+
+char buff[BUFSIZ];
+
+
 
 if (argc != 3)
 
@@ -32,106 +34,63 @@ exit(97);
 
 }
 
+ffrom = open(argv[1], O_RDONLY);
 
-
-copy_file(argv[1], argv[2]);
-
-exit(0);
-
-}
-
-
-
-/**
-*
-*   * copy_file - ...
-*
-*     * @src: ...
-*
-*       * @dest: ...
-*
-*         *
-*
-*           * Return: ...
-*
-*             */
-
-void copy_file(const char *src, const char *dest)
+if (ffrom  == -1)
 
 {
 
-int ofd, tfd, readed;
-
-char buff[1024];
-
-
-
-ofd = open(src, O_RDONLY);
-
-if (!src || ofd == -1)
-
-{
-
-dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", src);
+dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 
 exit(98);
 
 }
 
+fto = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 
+while ((rd = read(ffrom, buff, BUFSIZ)) > 0)
 
-tfd = open(dest, O_CREAT | O_WRONLY | O_TRUNC, 0664);
-
-while ((readed = read(ofd, buff, 1024)) > 0)
-
-{
-
-if (write(tfd, buff, readed) != readed || tfd == -1)
+if (fto == -1 || (write(fto, buff, rd) != rd))
 
 {
 
-dprintf(STDERR_FILENO, "Error: Can't write to %s\n", dest);
+dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 
 exit(99);
 
 }
 
-}
-
-
-
-if (readed == -1)
+if (rd == -1)
 
 {
 
-dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", src);
+dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 
 exit(98);
 
 }
 
+clf = close(ffrom);
 
+clt = close(fto);
 
-if (close(ofd) == -1)
+if (clf == -1 || clt == -1)
 
 {
 
-dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", ofd);
+if (clf == -1)
+
+dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", ffrom);
+
+else if (clt == -1)
+
+dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fto);
 
 exit(100);
 
 }
 
+return (0);
 
-
-if (close(tfd) == -1)
-
-{
-
-dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", tfd);
-
-exit(100);
-
-}
 
 }

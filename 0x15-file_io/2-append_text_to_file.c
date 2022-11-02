@@ -3,16 +3,11 @@
 
 
 /**
-*
 *append_text_to_file - appends text to the end of a file
-*
 * @filename: the name of the file to append text to
-*
 * @text_content: the text to append with NULL termination
-*
 * Return: 1 on success, -1 on failure, -1 if @filename is NULL, 1 if file
 * exists, -1 if file doesn't exist
-*
 */
 
 

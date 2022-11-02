@@ -5,15 +5,10 @@
 
 
 /**
-*
 * create_file - Creates a file with read/write permissions
-*
 * @filename: name of the file
-*
 * @text_content: the text to write into the file
-*
 * Return: 1 on success, -1 on failure
-*
 */
 
 

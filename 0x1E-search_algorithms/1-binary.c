@@ -18,7 +18,7 @@ for (i = low; i <= high; i++)
 {
 printf("%d", array[i]);
 if (i < high)
-printf(",");
+printf(", ");
 }
 printf("\n");
 }

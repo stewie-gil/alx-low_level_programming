@@ -11,21 +11,21 @@
 
 int binary_search(int *array, size_t size, int value)
 {
-unsigned int i;
-size_t low = 0;
-size_t high = size - 1;
-size_t m = 0;
+int i;
+int low = 0;
+ int high = (signed)size - 1;
+int m = 0;
 
 while (low <= high)
 {
 
 printf("Searching in array: ");
 
-for (i = low; i <= high; i++)
+for (i = array[low]; i <= array[high]; i++)
 {
-printf("%d", array[i]);
+printf("%d", i);
 
-if ((signed int) i != array[high])
+if (i != array[high])
 printf(", ");
 }
 

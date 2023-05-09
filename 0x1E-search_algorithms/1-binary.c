@@ -13,7 +13,7 @@ int binary_search(int *array, size_t size, int value)
 {
 int i;
 int low = 0;
- int high = (signed)size - 1;
+int high = (signed int)size - 1;
 int m = 0;
 
 while (low <= high)

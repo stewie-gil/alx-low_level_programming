@@ -1,0 +1,30 @@
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+int jump_search(int *array, size_t size, int value)
+{
+ int jump = (signed)sqrt(size);
+ int upper = jump;
+ int lower = 0;
+ int i;
+
+ while (upper < (signed)(size) && array[upper] < value)
+   {
+     lower = upper;
+     upper = upper + jump;
+
+     if(upper > (signed)size - 1)
+       {
+	 upper = size;
+       }
+   }
+ for (i = lower; i < upper; i++)
+   {
+     if(array[i] == value)
+     {
+       return i;
+ }
+   }
+return -1;
+}
